@@ -176,6 +176,44 @@ FROM hourly_sale
 GROUP BY shift
 ```
 
+11. **Write a SQL query to find the average quantity sold per transaction for each category.**:
+```sql
+SELECT 
+    category,
+    AVG(quantiy) AS avg_quantity_per_transaction
+FROM 
+    retail_sales1
+GROUP BY 
+    category;
+```
+
+12. ** Write a SQL query to find the most frequent purchase hour for each customer.**:
+```sql
+SELECT 
+    customer_id,
+    DATEPART(HOUR, sale_time) AS purchase_hour,
+    COUNT(*) AS frequency
+FROM 
+    retail_sales1
+GROUP BY 
+    customer_id,
+    DATEPART(HOUR, sale_time)
+ORDER BY 
+    customer_id,
+    frequency DESC;
+```
+
+13. **Write a SQL query to calculate the total profit (assuming profit = total_sale - cogs) for each category.**:
+```sql
+SELECT 
+    category,
+    SUM(total_sale - cogs) AS total_profit
+FROM 
+    retail_sales1
+GROUP BY 
+    category;
+```
+
 ## Findings
 
 - **Customer Demographics**: The dataset includes customers from various age groups, with sales distributed across different categories such as Clothing and Beauty.
