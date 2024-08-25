@@ -199,9 +199,9 @@ This project serves as a comprehensive introduction to SQL for data analysts, co
 
 - **Key Performance Insights**:
 
-The dataset reveals that sales vary significantly across categories, customer demographics, and time shifts.
-High-value transactions and top customers indicate where targeted efforts might yield the most significant returns.
-The seasonal trends identified in monthly sales can inform strategic planning for inventory, promotions, and staffing.
+- The dataset reveals that sales vary significantly across categories, customer demographics, and time shifts.
+- High-value transactions and top customers indicate where targeted efforts might yield the most significant returns.
+- The seasonal trends identified in monthly sales can inform strategic planning for inventory, promotions, and staffing.
 
 - **Recommendations**:
 
