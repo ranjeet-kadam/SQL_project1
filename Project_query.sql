@@ -167,3 +167,36 @@ select shift,count(*) as orders
 from hourly_sale
 group by shift
 
+-- Q11. Write a SQL query to find the average quantity sold per transaction for each category.
+
+SELECT 
+    category,
+    AVG(quantiy) AS avg_quantity_per_transaction
+FROM 
+    retail_sales1
+GROUP BY 
+    category;
+
+-- Q12. Write a SQL query to find the most frequent purchase hour for each customer.
+
+SELECT 
+    customer_id,
+    DATEPART(HOUR, sale_time) AS purchase_hour,
+    COUNT(*) AS frequency
+FROM 
+    retail_sales1
+GROUP BY 
+    customer_id,
+    DATEPART(HOUR, sale_time)
+ORDER BY 
+    customer_id,
+    frequency DESC;
+
+-- Q13. Write a SQL query to calculate the total profit (assuming profit = total_sale - cogs) for each category.
+SELECT 
+    category,
+    SUM(total_sale - cogs) AS total_profit
+FROM 
+    retail_sales1
+GROUP BY 
+    category;
