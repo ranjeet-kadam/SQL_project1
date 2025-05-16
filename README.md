@@ -231,6 +231,10 @@ SELECT
     (total_sale - cogs) AS profit
 FROM 
     retail_sales1;
+
+-- Fetch transactions where profit exceeded 100
+SELECT * FROM vw_sales_profit_summary WHERE profit > 100;
+
 ```
 ## Findings
 
