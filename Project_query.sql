@@ -200,3 +200,26 @@ FROM
     retail_sales1
 GROUP BY 
     category;
+
+-- Q.14. Create a view to summarize each transaction, including the profit (where profit = total_sale - cogs) along with key customer and product details.
+
+CREATE VIEW vw_sales_profit_summary AS
+SELECT 
+    transactions_id,
+    sale_date,
+    sale_time,
+    customer_id,
+    gender,
+    age,
+    category,
+    quantiy,
+    price_per_unit,
+    cogs,
+    total_sale,
+    (total_sale - cogs) AS profit
+FROM 
+    retail_sales1;
+
+-- Fetch transactions where profit exceeded 100
+SELECT * FROM vw_sales_profit_summary WHERE profit > 100;
+
